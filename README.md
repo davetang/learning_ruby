@@ -1,3 +1,12 @@
+Table of Contents
+=================
+
+* [Learning Ruby](#learning-ruby)
+   * [Learn Ruby in Y minutes](#learn-ruby-in-y-minutes)
+   * [Blocks](#blocks)
+
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+
 # Learning Ruby
 
 I have inherited and need to maintain a bunch of Ruby scripts. So here we go.
@@ -336,4 +345,43 @@ b
 # => 2
 c
 # => 3
+```
+
+## Blocks
+
+Explanation of [pipe characters in a
+block](https://stackoverflow.com/questions/4240620/can-someone-explain-rubys-use-of-pipe-characters-in-a-block).
+
+Braces define an anonymous function, i.e. lambda, and are called a block.
+Tokens between the pipe are the arguments of the block and the number of
+arguments required depends on how the block is used. Each time the block is
+evaluated, the method requiring the block will pass a value based on the object
+calling it.
+
+The following are the same.
+
+```ruby
+def my_print(i)
+   puts i
+end
+
+25.times
+# => #<Enumerator: ...>
+
+25.times &method(:my_print)
+# output not shown
+
+25.times {|i| puts i}
+# output not shown
+```
+
+A block with two arguments.
+
+```ruby
+{:key1 => "value1", :key2 => "value2"}.each {|key,value| 
+   puts "This key is: #{key}. Its value is #{value}"
+}
+# This key is: key1. Its value is value1
+# This key is: key2. Its value is value2
+# => {:key1=>"value1", :key2=>"value2"}
 ```
