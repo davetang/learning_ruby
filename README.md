@@ -61,7 +61,7 @@ Use `0b` as a prefix for binary numbers.
 
 ```ruby
 0b110
-=> 6
+# => 6
 ```
 
 Bitwise operators are also the same as Perl
@@ -82,9 +82,13 @@ Special values, which are also objects.
 ```ruby
 # equivalent to NULL
 nil
+# => nil
 
 true
+# => true
+
 false
+# => false
 ```
 
 Comparison operators are the same as other languages.
@@ -93,7 +97,7 @@ Comparison operators are the same as other languages.
 1 == 1
 # => true
 
-# works on strings
+# works with strings
 'one' == 'one'
 # => true
 
@@ -102,7 +106,7 @@ Comparison operators are the same as other languages.
 
 # bang-bang to force Boolean
 !!0
-=> true
+# => true
 ```
 
 The spaceship operator exists in Ruby. Returns 1 when the first argument is
@@ -116,7 +120,7 @@ greater, -1 when the second is greater, and 0 otherwise.
 # => -1
 
 10<=>10
-=> 0
+# => 0
 ```
 
 Just like in Perl, there are two versions of logical operators; the "word"
